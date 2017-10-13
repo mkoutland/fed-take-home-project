@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset='UTF-8'/>
+   <title>FED Take Home Project</title>
+   <link href="assets/fonts/webfonts/ss-pika.css" rel="stylesheet" />
+   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800" />
+   <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="/assets/dist/css/main.css">
+</head>
+<body>
+   <header>
+      <section class="container header">
+         <div class="desktop-header">
+            <ul>
+               <li class="dealers">
+                  <a href="#">Dealers and Distributors</a>
+               </li>
+               <li>
+                  <a href="#">Commercial Service</a>
+               </li>
+               <li>
+                  <a href="#"><i class="fa fa-share-square-o icon-share" aria-hidden="true"></i></a>
+               </li>
+            </ul>
+         </div>
+         <div class="top-wrapper">
+            <img src="assets/images/logo.png" alt="head-logo" id="logo">
+            <div class="desktop-menu-options">
+               <nav>
+                  <ul>
+                     <li><a href="#">Pools &amp; Spas</a></li>
+                     <li><a href="#">Supplies</a></li>
+                     <li><a href="#">Resources</a></li>
+                     <li><a href="#">Services</a></li>
+                  </ul>
+                  <button class="find-pro desktop" type="button">
+                     <i class="fa fa-map-marker icon-map" aria-hidden="true"></i>
+                     <span class="find-text">Find a Pool Pro</span>
+                  </button>
+               </nav>
+            </div>
+            <button class="find-pro mobile" type="button">
+               <i class="fa fa-map-marker" aria-hidden="true"></i>
+               <span class="find-text">FIND A PRO</span>
+            </button>
+            <div class="menu-circle" style="cursor:pointer" onclick="openMenu()">
+               <img src="assets/images/menu.png" alt="menu" id="menu">
+            </div>
+         </div>
+      </section>
+      <div id="menu-pop" class="overlay">
+         <div class="overlay-wrapper">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+            <div class="overlay-content">
+               <h1>MENU</h1>
+               <ul>
+                  <li>
+                     <a href="#">Pools &amp; Spas</a> 
+                     <div class="icon-wrapper">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                     </div>
+                  </li>
+                  <li>
+                     <a href="#">Supplies</a> 
+                     <div class="icon-wrapper">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                     </div>
+                  </li>
+                  <li>
+                     <a href="#">Resources</a> 
+                     <div class="icon-wrapper">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                     </div>
+                  </li>
+                  <li>
+                     <a href="#">Services</a> 
+                     <div class="icon-wrapper">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                     </div>
+                  </li>
+               </ul>
+               <div class="menu-footer"></div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <main>
+      <section class="container top-hero">
+         <div class="wrapper hero">
+            <div class="hero-image" id="hero">
+            </div>
+         </div>
+      </section>
+      <section class="container results">
+         <div class="filtered-results">
+            <div class="zip-results">7 dealers in 28226
+            </div>
+            <div class="desk-filter-text">Filter Results</div>
+            <div class="filter-div">
+               <button onclick="myFunction()" class="dropbtn" id="b-border">
+                  <span class="filter-text">Filter Results</span>
+                  <i class="fa fa-sort-desc icon-drop" aria-hidden="true"></i>
+               </button>
+            </div>
+            <ul class="sub-menu" id="myDropDown">
+               <li>
+                  <input type="checkbox" name="pro-type" value="service" id="service" class="chk-box" />
+                  <label class="choice" for="service">Service</label>
+               </li>
+               <li>
+                  <input type="checkbox" name="pro-type" value="installation" id="installation" class="chk-box" />
+                  <label class="choice" for="installation">Installation</label>
+               </li>
+               <li>
+                  <input type="checkbox" name="pro-type" value="residential" id="residential" class="chk-box" />
+                  <label class="choice" for="residential">Residential</label>
+               </li>
+               <li>
+                  <input type="checkbox" name="pro-type" value="commercial" id="commercial" class="chk-box comm"/>
+                  <label class="choice comm" for="commercial">Commercial</label>
+                  <div class="rectangle">
+                     <i class="fa fa-question icon" aria-hidden="true"></i>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <section class="container cards js-cards" id="cards-id">
+      </section>
+
+      <div class="contact-overlay" id="myContact">
+         <form class="contact-overlay-content" method="post">
+            <div class="contact-header js-contact">
+               <a href="javascript:void(0)" class="closebtn" onclick="closeContact()">&times;</a>
+               <p class="company-email">EMAIL</p>
+               <p class="company-name js-company-name"></p>
+            </div>
+            <div class="contact-form">
+               <p class="fill-out js-contact">Fill out the form below and <span class="js-company-name"></span> will get in touch.
+               </p>
+               <div class="contact-fields">
+                  <div class="first-last-name">
+                     <label for="first-last-name">First and last name</label>
+                     <img src="assets/images/circle.png" alt="unchecked" id="fl-name" class="circle">
+                     <input class="hasValue" type="text" name="first-last-name" id="first-last-name">
+                  </div>
+                  <div class="phone">
+                     <label for="phone">Phone number</label>
+                     <img src="assets/images/circle.png" alt="unchecked" id="phone-image" class="circle">
+                     <input class="hasValue" type="text" name="phone-number" id="phone">
+                  </div>
+                  <div class="email">
+                     <label for="mail">Email address</label>
+                     <img src="assets/images/circle.png" alt="unchecked" id="email-image" class="circle">
+                     <input class="hasValue" type="email" name="email-address" id="mail">
+                  </div>
+                  <div class="comments">
+                     <div class="com-opt">
+                        <label for="comments">Comments or questions</label>
+                        <p class="optional"><em>optional</em></p>
+                     </div>
+                     <textarea name="comments" id="comments"></textarea>
+                  </div>
+                  <div class="question-div">
+                     <p class="pool-spa">Do you currently own a pool or spa?</p>
+                     <div class="yes-no">
+                        <input type="checkbox" class="question" name="question" value="yes" id="yes"/>
+                        <label for="yes">Yes</label>
+                        <input type="checkbox" class="question" name="question" value="no" id="no">
+                        <label for="no" >No</label> 
+                     </div>
+                  </div>
+                  <button type="submit" class="closebtn submitbtn" id="form-submit">Send</button>
+               </div>
+            </div>
+         </form>
+      </div>
+   </main>
+   <footer>
+      <div class="foot">
+         <div class="footer-top">
+            <div class="foot-logo">
+               <img src="assets/images/pool-pros-logo-footer.png" alt="logo-footer" id="logo-footer">
+            </div>
+            <div class="first-footnav">
+               <span class="first-foot-text"><a href="#" id="connect">CONNECT WITH US</a></span>
+               <span class="social"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-facebook icon-fb" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+               </span>
+            </div>
+         </div>
+         <div class="footer-bottom">
+            <div class="bottom-top">
+               <ul>
+                  <li class="dealers">
+                     <a href="#">Dealers and Distributors</a>
+                  </li>
+                  <li class="line">|</li>
+                  <li>
+                     <a href="#">Commercial Service</a>
+                  </li>
+                  <li>
+                     <a href="#"><i class="fa fa-share-square-o icon-share" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+               <hr>
+            </div>
+            <div class="bottom-bottom">
+               <ul>
+                  <li>&copy; 2017 Pool Pros</li>
+                  <li class="line">|</li>
+                  <li><a>Privacy Policy</a></li>
+                  <li class="line">|</li>
+                  <li><a>Terms and Conditions</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript" src="assets/dist/js/main.js"></script>   
+</body>
+</html>
